@@ -257,7 +257,7 @@ z_index = -1
 texture = ExtResource( 17 )
 
 [node name="Appletree" type="Sprite" parent="scene"]
-position = Vector2( 3620, -1310 )
+position = Vector2( 2680, -1290 )
 texture = ExtResource( 19 )
 script = ExtResource( 18 )
 
