@@ -1,0 +1,105 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://assests/player/player_right_walk (4).png" type="Texture" id=1]
+[ext_resource path="res://assests/player/player_right_walk (2).png" type="Texture" id=2]
+[ext_resource path="res://assests/player/player_right_walk (3).png" type="Texture" id=3]
+[ext_resource path="res://assests/player/player_right_walk (1).png" type="Texture" id=4]
+[ext_resource path="res://assests/player/player_right_afk (2).png" type="Texture" id=5]
+[ext_resource path="res://assests/player/player_right_afk (1).png" type="Texture" id=6]
+[ext_resource path="res://player.gd" type="Script" id=7]
+[ext_resource path="res://assests/player/player_left_afk (1).png" type="Texture" id=8]
+[ext_resource path="res://assests/player/player_left_afk (2).png" type="Texture" id=9]
+[ext_resource path="res://assests/player/player_left_walk (1).png" type="Texture" id=10]
+[ext_resource path="res://assests/player/player_left_walk (2).png" type="Texture" id=11]
+[ext_resource path="res://assests/player/player_left_walk (3).png" type="Texture" id=12]
+[ext_resource path="res://assests/player/player_left_walk (4).png" type="Texture" id=13]
+[ext_resource path="res://assests/player/player_back_afk (1).png" type="Texture" id=14]
+[ext_resource path="res://assests/player/player_back_afk (2).png" type="Texture" id=15]
+[ext_resource path="res://assests/player/player_back_walk (2).png" type="Texture" id=16]
+[ext_resource path="res://assests/player/player_back_walk (1).png" type="Texture" id=17]
+[ext_resource path="res://assests/player/player_back_walk (3).png" type="Texture" id=18]
+[ext_resource path="res://assests/player/player_back_walk (4).png" type="Texture" id=19]
+[ext_resource path="res://assests/player/player_forward_walk (4).png" type="Texture" id=20]
+[ext_resource path="res://assests/player/player_forward_walk (1).png" type="Texture" id=21]
+[ext_resource path="res://assests/player/player_forward_walk (3).png" type="Texture" id=22]
+[ext_resource path="res://assests/player/player_forward_afk (1).png" type="Texture" id=23]
+[ext_resource path="res://assests/player/player_forward_afk (2).png" type="Texture" id=24]
+[ext_resource path="res://assests/player/player_forward_walk (2).png" type="Texture" id=25]
+[ext_resource path="res://assests/shadow.png" type="Texture" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "back_afk",
+"speed": 0.95
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "back_walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "forward_afk",
+"speed": 0.95
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "forward_walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "left_afk",
+"speed": 0.95
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "left_walk",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "right_afk",
+"speed": 0.95
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "right_walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 144.0
+height = 320.0
+
+[node name="player" type="KinematicBody2D"]
+scale = Vector2( 0.125, 0.125 )
+script = ExtResource( 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 8, 8 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 2.5
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "back_afk"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, 272.001 )
+scale = Vector2( 0.357778, 0.357778 )
+z_index = -1
+texture = ExtResource( 26 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 0, 296 )
