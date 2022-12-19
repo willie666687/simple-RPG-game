@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-export var speed = 200
+export var speed = 250
 var looking = "back"
+export var fighting = false
 func _ready():
 	pass
 
-
-func _physics_process(delta):
+func move(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -40,4 +40,11 @@ func _physics_process(delta):
 		$AnimatedSprite.animation = "forward_afk"
 # warning-ignore:standalone_expression
 	move_and_slide(velocity)*delta
+
+func _process(delta):
+	if fighting == true:
+		pass
+	pass
+func _physics_process(delta):
+	move(delta)
 	pass

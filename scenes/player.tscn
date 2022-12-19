@@ -6,7 +6,7 @@
 [ext_resource path="res://assests/player/player_right_walk (1).png" type="Texture" id=4]
 [ext_resource path="res://assests/player/player_right_afk (2).png" type="Texture" id=5]
 [ext_resource path="res://assests/player/player_right_afk (1).png" type="Texture" id=6]
-[ext_resource path="res://player.gd" type="Script" id=7]
+[ext_resource path="res://scripts/player.gd" type="Script" id=7]
 [ext_resource path="res://assests/player/player_left_afk (1).png" type="Texture" id=8]
 [ext_resource path="res://assests/player/player_left_afk (2).png" type="Texture" id=9]
 [ext_resource path="res://assests/player/player_left_walk (1).png" type="Texture" id=10]
@@ -88,11 +88,8 @@ smoothing_speed = 2.5
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "back_afk"
+frame = 1
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -8 )
-shape = SubResource( 2 )
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 272.001 )
@@ -102,3 +99,13 @@ texture = ExtResource( 26 )
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 0, 296 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
