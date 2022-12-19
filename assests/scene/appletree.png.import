@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/appletree.png-f5d9f204176e6c666ab833cfb4797aad.stex"
+path="res://.import/appletree.png-9d40465cef60c9273c00c753c67df8dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/appletree.png"
-dest_files=[ "res://.import/appletree.png-f5d9f204176e6c666ab833cfb4797aad.stex" ]
+source_file="res://assests/scene/appletree.png"
+dest_files=[ "res://.import/appletree.png-9d40465cef60c9273c00c753c67df8dd.stex" ]
 
 [params]
 

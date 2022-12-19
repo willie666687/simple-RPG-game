@@ -25,7 +25,7 @@
 [ext_resource path="res://assests/player/player_forward_afk (1).png" type="Texture" id=23]
 [ext_resource path="res://assests/player/player_forward_afk (2).png" type="Texture" id=24]
 [ext_resource path="res://assests/player/player_forward_walk (2).png" type="Texture" id=25]
-[ext_resource path="res://assests/shadow.png" type="Texture" id=26]
+[ext_resource path="res://assests/scene/shadow.png" type="Texture" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

@@ -15,10 +15,10 @@
 [ext_resource path="res://assests/floor/dirt_grass_dot_right_down.png" type="Texture" id=13]
 [ext_resource path="res://assests/floor/dirt_grass_dot_right_up.png" type="Texture" id=14]
 [ext_resource path="res://assests/floor/dirt_grass_dot_left_up.png" type="Texture" id=15]
-[ext_resource path="res://assests/tree.png" type="Texture" id=16]
-[ext_resource path="res://assests/shadow.png" type="Texture" id=17]
+[ext_resource path="res://assests/scene/tree.png" type="Texture" id=16]
+[ext_resource path="res://assests/scene/shadow.png" type="Texture" id=17]
 [ext_resource path="res://Tree.gd" type="Script" id=18]
-[ext_resource path="res://assests/appletree.png" type="Texture" id=19]
+[ext_resource path="res://assests/scene/appletree.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass.png 0"
