@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var speed = 250
 var looking = "back"
 export var fighting = false
+export var started = false
 func _ready():
 	pass
 
@@ -42,7 +43,12 @@ func move(delta):
 	move_and_slide(velocity)*delta
 
 func _process(delta):
-	if fighting == true:
+	if fighting == true && started == false:
+		if $"/root/Ui/Timer".time_left == 0:
+			var scene = load("res://scenes/battle_UI.tscn")
+			var instance = scene.instance()
+			call_deferred("add_child",instance)
+			started = true
 		pass
 	pass
 func _physics_process(delta):
