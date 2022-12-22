@@ -1,6 +1,8 @@
 extends Area2D
 
 var player
+var health = 100.0
+var fightArea
 func _ready():
 	player = $"/root/Node2D/player"
 	pass
@@ -21,4 +23,6 @@ func _on_slime_body_entered(body):
 		instance.scale.x = 8
 		instance.scale.y = 8
 		$"/root/Node2D".call_deferred("add_child", instance)
+		player.enemy = self
+		fightArea = instance
 	pass

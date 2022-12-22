@@ -90,7 +90,6 @@ text = "hi
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
-one_shot = true
 
 [node name="fight_time" type="Label" parent="."]
 anchor_left = 0.5
@@ -105,3 +104,5 @@ custom_fonts/font = SubResource( 5 )
 align = 1
 valign = 1
 script = ExtResource( 4 )
+
+[connection signal="timeout" from="Timer" to="fight_time" method="_on_Timer_timeout"]

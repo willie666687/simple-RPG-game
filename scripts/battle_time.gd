@@ -2,7 +2,7 @@ extends Label
 
 var timerStarted = false
 var timer
-func _process(delta):
+func _process(_delta):
 	timer = $"../Timer"
 	if $"/root/Node2D/player".fighting == true && timerStarted == false:
 		timer.start()
@@ -15,3 +15,9 @@ func _process(delta):
 			timer.stop()
 			text = ""
 	pass
+
+
+func _on_Timer_timeout():
+	timer.stop()
+	text = ""
+	pass # Replace with function body.

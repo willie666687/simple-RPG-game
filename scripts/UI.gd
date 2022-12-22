@@ -27,7 +27,7 @@ func ReportListItem():
 		$"Label".text = SelectedItemtext
 		$"GoButton".icon = $"ItemList".items[ItemNo[0]*3+1]
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("open_inventory"):
 		if opened == false:
 			if_show(true)
