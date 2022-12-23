@@ -88,7 +88,6 @@ smoothing_speed = 2.5
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "back_afk"
-frame = 1
 playing = true
 
 [node name="Shadow" type="Sprite" parent="."]

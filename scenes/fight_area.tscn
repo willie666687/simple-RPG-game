@@ -2,7 +2,8 @@
 
 [ext_resource path="res://assests/fight_area.png" type="Texture" id=1]
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="fight area" type="StaticBody2D"]
+scale = Vector2( 8, 8 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -504, -1, -504, 49, -495, 104, -485, 140, -466, 194, -445, 237, -416, 282, -373, 342, -326, 385, -290, 413, -266, 430, -202, 461, -159, 480, -109, 492, -52, 501, 0, 506, 2, 613, -664, 616, -664, 0 )
@@ -20,5 +21,5 @@ rotation = 3.14159
 polygon = PoolVector2Array( -504, -1, -504, 49, -495, 104, -485, 140, -466, 194, -445, 237, -416, 282, -373, 342, -326, 385, -290, 413, -266, 430, -202, 461, -159, 480, -109, 492, -52, 501, 0, 506, 2, 613, -664, 616, -664, 0 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
-rotation = 4.71239
+rotation = -1.5708
 polygon = PoolVector2Array( -504, -1, -504, 49, -495, 104, -485, 140, -466, 194, -445, 237, -416, 282, -373, 342, -326, 385, -290, 413, -266, 430, -202, 461, -159, 480, -109, 492, -52, 501, 0, 506, 2, 613, -664, 616, -664, 0 )

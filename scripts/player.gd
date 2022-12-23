@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 250
+export var speed = 275
 var looking = "back"
 export var fighting = false
 export var started = false
@@ -52,8 +52,6 @@ func _process(_delta):
 			instance.enemy = enemy
 			call_deferred("add_child",instance)
 			started = true
-		pass
-	pass
 func _physics_process(delta):
 	move(delta)
 	pass
