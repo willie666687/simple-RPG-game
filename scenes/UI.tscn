@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/player_health_attack.gd" type="Script" id=1]
 [ext_resource path="res://assests/TaipeiSansTCBeta-Regular.ttf" type="DynamicFontData" id=2]
@@ -31,6 +31,10 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 100
 font_data = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" groups=["fight"]]
@@ -188,4 +192,24 @@ position = Vector2( 107.5, 0 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 6 )
 
+[node name="died" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -201.5
+margin_top = -50.5
+margin_right = 201.5
+margin_bottom = 50.5
+custom_fonts/font = SubResource( 7 )
+text = "You died"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="died"]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="fight_time" method="_on_Timer_timeout"]
+[connection signal="timeout" from="died/Timer" to="." method="_on_Timer_timeout"]

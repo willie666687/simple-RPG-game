@@ -31,6 +31,14 @@ func attack():
 	$"Node2D".call_deferred("add_child",attackParticlesInstance)
 	pass
 
+func died():
+	enemy.fightArea.queue_free()
+	enemy.queue_free()
+	queue_free()
+	$"/root/Node2D/player".fighting = false
+	$"/root/Node2D/player".started = false
+	$"/root/Ui/fight_time".timerStarted = false
+
 # attack button appear
 func _on_Timer_timeout():
 	if ending == false:

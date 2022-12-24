@@ -79,3 +79,5 @@ func add_item(item,des):
 		$"ItemList".add_item(item)
 		itemDes[item] = des
 		itemCount[item] = 1
+func _on_Timer_timeout():
+	print("respawn2")

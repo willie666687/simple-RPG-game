@@ -4,6 +4,7 @@ export var speed = 275
 var looking = "back"
 export var fighting = false
 export var started = false
+export var spawnpoint = Vector2.ZERO
 var enemy
 func _ready():
 	pass
@@ -53,5 +54,6 @@ func _process(_delta):
 			call_deferred("add_child",instance)
 			started = true
 func _physics_process(delta):
-	move(delta)
+	if !$"/root/Ui".died:
+		move(delta)
 	pass

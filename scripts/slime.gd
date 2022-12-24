@@ -20,11 +20,12 @@ func _process(_delta):
 			$Timer.start()
 
 func _on_slime_body_entered(body):
+	print(body)
 	if body == player && player.fighting == false:
 		player.fighting = true
 		var scene = load("res://scenes/fight_area.tscn")
 		var instance = scene.instance()
-		instance.position = position
+		instance.position = self.global_position*10
 		$"/root/Node2D".call_deferred("add_child", instance)
 		player.enemy = self
 		fightArea = instance
