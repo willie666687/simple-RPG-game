@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_campfire_body_entered(body):
-	if body == player && player.fighting == false:
+	if body == $"/root/Node2D/player/hitbox" && player.fighting == false:
 		player.spawnpoint = self.global_position
 		$"/root/Ui".playerHealth = $"/root/Ui".playerMaxHealth
 	pass

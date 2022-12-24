@@ -1,7 +1,7 @@
 extends "res://scripts/inventory.gd"
 export var playerHealth = 100.0
 export var playerMaxHealth = 100.0
-export var playerAttack = 20.0
+export var playerAttack = 10.0
 export var died = false
 
 func _process(delta):

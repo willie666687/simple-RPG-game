@@ -22,6 +22,8 @@ func _process(_delta):
 			$Timer2.start()
 			print("ending")
 			enemy.visible = false
+			enemy.fightArea.queue_free()
+			enemy.queue_free()
 			ending = true
 	pass
 
@@ -61,9 +63,7 @@ func _input(event):
 
 # ended
 func _on_Timer2_timeout():
-	print("end")
-	enemy.fightArea.queue_free()
-	enemy.queue_free()
+#	enemy.fightArea.queue_free()
 	queue_free()
 	$"/root/Node2D/player".fighting = false
 	$"/root/Node2D/player".started = false

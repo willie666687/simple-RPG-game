@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assests/scene/shadow.png" type="Texture" id=1]
+[ext_resource path="res://assests/scene/tree.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Tree.gd" type="Script" id=3]
+
+[node name="Tree" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( -29.9998, 730 )
+scale = Vector2( 0.711111, 0.711112 )
+z_index = -1
+texture = ExtResource( 1 )

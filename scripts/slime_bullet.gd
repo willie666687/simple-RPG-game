@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _on_slime_bullet_body_entered(body):
-	if body == player && player.fighting == true:
+	if body == $"/root/Node2D/player/hitbox" && player.fighting == true:
 		$"/root/Ui".playerHealth -= 15
 		queue_free()
 

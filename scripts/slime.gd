@@ -20,8 +20,7 @@ func _process(_delta):
 			$Timer.start()
 
 func _on_slime_body_entered(body):
-	print(body)
-	if body == player && player.fighting == false:
+	if body == $"/root/Node2D/player/hitbox" && player.fighting == false:
 		player.fighting = true
 		var scene = load("res://scenes/fight_area.tscn")
 		var instance = scene.instance()
