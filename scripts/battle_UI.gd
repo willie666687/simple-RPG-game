@@ -36,8 +36,10 @@ func _on_Timer_timeout():
 	if ending == false:
 		if attackButtonInstance && attacked == false:
 			attackButtonInstance.queue_free()
-			if $"/root/Ui".enemyHealth <= $"/root/Ui".enemyMaxHealth - 5:
-				$"/root/Ui".enemyHealth += 2.5
+			if $"/root/Ui".enemyHealth <= $"/root/Ui".enemyMaxHealth - enemy.regeneration:
+				$"/root/Ui".enemyHealth += enemy.regeneration
+			else:
+				$"/root/Ui".enemyHealth = enemy.health
 		attackButtonInstance = attackButton.instance()
 		attackButtonInstance.position.x = rand_range(51.2,1484.8)
 		attackButtonInstance.position.y = rand_range(51.2,848.8)

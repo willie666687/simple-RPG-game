@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://scripts/UI.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player_health_attack.gd" type="Script" id=1]
 [ext_resource path="res://assests/TaipeiSansTCBeta-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assests/floor/dirt.png" type="Texture" id=3]
 [ext_resource path="res://scripts/battle_time.gd" type="Script" id=4]
 [ext_resource path="res://assests/UI/health_bar.png" type="Texture" id=5]
 [ext_resource path="res://assests/UI/health.png" type="Texture" id=6]
@@ -12,7 +11,7 @@
 [ext_resource path="res://assests/UI/player_health_bottom.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -43,7 +42,7 @@ margin_top = 16.0
 margin_right = 320.0
 margin_bottom = 704.0
 custom_fonts/font = SubResource( 2 )
-items = [ "第 0 項", ExtResource( 3 ), false, "第 1 項", ExtResource( 3 ), false, "第 2 項", ExtResource( 3 ), false, "第 3 項", null, false, "第 4 項", null, false, "第 5 項", null, false, "第 6 項", null, false, "第 7 項", null, false, "第 8 項", null, false, "第 9 項", null, false, "第 10 項", null, false, "第 11 項", null, false ]
+items = [ "Wooden Sword", null, false ]
 icon_scale = 0.1
 
 [node name="Panel" type="Panel" parent="."]
@@ -115,51 +114,44 @@ custom_fonts/font = SubResource( 1 )
 text = "Equiped : "
 align = 1
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2( 1504, 32 )
+[node name="player health" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
 
-[node name="HealthBar" type="Sprite" parent="Node2D2"]
-position = Vector2( -129, 43 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 5 )
-
-[node name="Node2D" type="Node2D" parent="Node2D2"]
-position = Vector2( -236.5, 43 )
-
-[node name="Health" type="Sprite" parent="Node2D2/Node2D"]
-position = Vector2( 107.5, 0 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 6 )
-
-[node name="Health bar" type="Node2D" parent="."]
-position = Vector2( 768, 877.5 )
+[node name="Health bar" type="Node2D" parent="player health"]
+position = Vector2( 20, 12 )
 scale = Vector2( 0.4, 0.4 )
 
-[node name="PlayerHealthBar" type="Sprite" parent="Health bar"]
+[node name="PlayerHealthBar" type="Sprite" parent="player health/Health bar"]
 texture = ExtResource( 7 )
 
-[node name="health top" type="Node2D" parent="Health bar"]
+[node name="health top" type="Node2D" parent="player health/Health bar"]
 position = Vector2( -464, 0 )
 
-[node name="PlayerHealthCenter" type="Sprite" parent="Health bar/health top"]
+[node name="PlayerHealthCenter" type="Sprite" parent="player health/Health bar/health top"]
 position = Vector2( 464, 0 )
 texture = ExtResource( 9 )
 
-[node name="health center" type="Node2D" parent="Health bar"]
+[node name="health center" type="Node2D" parent="player health/Health bar"]
 position = Vector2( -496, -32 )
 
-[node name="PlayerHealthTop" type="Sprite" parent="Health bar/health center"]
+[node name="PlayerHealthTop" type="Sprite" parent="player health/Health bar/health center"]
 position = Vector2( 496, 32 )
 texture = ExtResource( 8 )
 
-[node name="health bottom" type="Node2D" parent="Health bar"]
+[node name="health bottom" type="Node2D" parent="player health/Health bar"]
 position = Vector2( -432, 32 )
 
-[node name="PlayerHealthBottom" type="Sprite" parent="Health bar/health bottom"]
+[node name="PlayerHealthBottom" type="Sprite" parent="player health/Health bar/health bottom"]
 position = Vector2( 432, -32 )
 texture = ExtResource( 10 )
 
-[node name="Health" type="Label" parent="Health bar"]
+[node name="Health" type="Label" parent="player health/Health bar"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -173,5 +165,27 @@ text = "/"
 align = 1
 valign = 1
 clip_text = true
+
+[node name="enemy health" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+
+[node name="enemy health bar" type="Node2D" parent="enemy health"]
+position = Vector2( 0, 32 )
+
+[node name="HealthBar" type="Sprite" parent="enemy health/enemy health bar"]
+position = Vector2( -129, 43 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D" parent="enemy health/enemy health bar"]
+position = Vector2( -236.5, 43 )
+
+[node name="Health" type="Sprite" parent="enemy health/enemy health bar/Node2D"]
+position = Vector2( 107.5, 0 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
 
 [connection signal="timeout" from="Timer" to="fight_time" method="_on_Timer_timeout"]

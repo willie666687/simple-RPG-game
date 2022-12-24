@@ -4,6 +4,8 @@ var player
 var health = 100.0
 var fightArea
 var bulletInstance
+var regeneration = 2.5
+
 func _ready():
 	player = $"/root/Node2D/player"
 	pass

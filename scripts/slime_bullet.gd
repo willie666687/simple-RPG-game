@@ -22,3 +22,8 @@ func _on_slime_bullet_body_entered(body):
 
 func _on_Timer_timeout():
 	start = true
+
+
+func _on_Timer2_timeout():
+	queue_free()
+	pass # Replace with function body.
