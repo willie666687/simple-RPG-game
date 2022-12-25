@@ -4,6 +4,8 @@
 
 [node name="fight area" type="StaticBody2D"]
 scale = Vector2( 8, 8 )
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -504, -1, -504, 49, -495, 104, -485, 140, -466, 194, -445, 237, -416, 282, -373, 342, -326, 385, -290, 413, -266, 430, -202, 461, -159, 480, -109, 492, -52, 501, 0, 506, 2, 613, -664, 616, -664, 0 )

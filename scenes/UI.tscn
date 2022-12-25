@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://scripts/player_health_attack.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player_atts.gd" type="Script" id=1]
 [ext_resource path="res://assests/TaipeiSansTCBeta-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assests/UI/xp_bar.png" type="Texture" id=3]
 [ext_resource path="res://scripts/battle_time.gd" type="Script" id=4]
 [ext_resource path="res://assests/UI/health_bar.png" type="Texture" id=5]
 [ext_resource path="res://assests/UI/health.png" type="Texture" id=6]
@@ -16,6 +17,10 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -37,8 +42,12 @@ font_data = ExtResource( 2 )
 size = 100
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
 [node name="CanvasLayer" type="CanvasLayer" groups=["fight"]]
 script = ExtResource( 1 )
+playerLevel = 4
 
 [node name="ItemList" type="ItemList" parent="."]
 margin_left = 24.0
@@ -56,13 +65,28 @@ margin_right = 640.0
 margin_bottom = 120.0
 
 [node name="Label - output" type="Label" parent="Panel"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -96.0
-margin_right = 296.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 306.0
+margin_bottom = 151.0
 custom_fonts/font = SubResource( 3 )
-text = "hi
-"
+
+[node name="atts" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -371.0
+margin_top = -426.0
+margin_right = -21.0
+margin_bottom = 254.0
+
+[node name="atts_text" type="Label" parent="atts"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 340.0
+margin_bottom = 670.0
+custom_fonts/font = SubResource( 9 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -81,16 +105,19 @@ align = 1
 valign = 1
 script = ExtResource( 4 )
 
-[node name="equip_button" type="Node2D" parent="."]
-position = Vector2( 24, 792 )
+[node name="equip_button" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
 
 [node name="GoButton" type="Button" parent="equip_button"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_right = 100.0
-margin_bottom = 100.0
+margin_left = 24.0
+margin_top = -124.0
+margin_right = 124.0
+margin_bottom = -24.0
 button_mask = 5
 expand_icon = true
 
@@ -99,9 +126,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = 40.0
-margin_right = 100.0
-margin_bottom = 69.0
+margin_left = 24.0
+margin_top = -84.0
+margin_right = 124.0
+margin_bottom = -55.0
 custom_fonts/font = SubResource( 4 )
 align = 1
 autowrap = true
@@ -111,9 +139,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = 16.0
-margin_right = 100.0
-margin_bottom = 33.0
+margin_left = 24.0
+margin_top = -108.0
+margin_right = 124.0
+margin_bottom = -91.0
 custom_fonts/font = SubResource( 1 )
 text = "Equiped : "
 align = 1
@@ -210,6 +239,26 @@ valign = 1
 [node name="Timer" type="Timer" parent="died"]
 wait_time = 3.0
 one_shot = true
+
+[node name="upequip_button" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = -148.0
+margin_right = 112.0
+margin_bottom = -125.0
+custom_fonts/font = SubResource( 8 )
+text = "Unequip"
+icon_align = 1
+
+[node name="player xp" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+
+[node name="xpBar" type="Sprite" parent="player xp"]
+position = Vector2( 768, 4 )
+scale = Vector2( 1.52381, 1 )
+texture = ExtResource( 3 )
 
 [connection signal="timeout" from="Timer" to="fight_time" method="_on_Timer_timeout"]
 [connection signal="timeout" from="died/Timer" to="." method="_on_Timer_timeout"]

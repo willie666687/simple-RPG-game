@@ -6,7 +6,7 @@ var slime = preload("res://scenes/slime.tscn")
 func _ready():
 	pass
 func _process(delta):
-	if $slimes.get_child_count() < 25:
+	if $slimes.get_child_count() < 15:
 		var avoid_objects = [$"/root/Node2D/player",$"/root/Node2D/scene/campfire"]
 		avoid_objects += $"/root/Node2D/scene/trees".get_children() + $"/root/Node2D/enemies/slimes".get_children() + $"/root/Node2D/scene/stones".get_children()
 		var instance = slime.instance()

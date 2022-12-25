@@ -18,9 +18,9 @@ func _ready():
 func _process(_delta):
 	if $"/root/Ui".enemyHealth <= 0:
 		if ending == false:
+			$"/root/Ui".playerXp += enemy.xp
 			$Won_text.visible = true
 			$Timer2.start()
-			print("ending")
 			enemy.visible = false
 			enemy.fightArea.queue_free()
 			enemy.queue_free()
@@ -40,6 +40,7 @@ func died():
 	$"/root/Node2D/player".fighting = false
 	$"/root/Node2D/player".started = false
 	$"/root/Ui/fight_time".timerStarted = false
+	$"/root/Node2D/player/CollisionShape2D2".disabled = true
 
 # attack button appear
 func _on_Timer_timeout():
@@ -68,4 +69,5 @@ func _on_Timer2_timeout():
 	$"/root/Node2D/player".fighting = false
 	$"/root/Node2D/player".started = false
 	$"/root/Ui/fight_time".timerStarted = false
+	$"/root/Node2D/player/CollisionShape2D2".disabled = true
 	pass

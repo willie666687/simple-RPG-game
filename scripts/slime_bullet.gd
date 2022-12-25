@@ -26,4 +26,4 @@ func _on_Timer_timeout():
 
 func _on_Timer2_timeout():
 	queue_free()
-	pass # Replace with function body.
+	pass

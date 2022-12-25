@@ -47,6 +47,7 @@ func move(delta):
 func _process(_delta):
 	# waiting start
 	if fighting == true && started == false:
+		$CollisionShape2D2.disabled = false
 		if $"/root/Ui/Timer".time_left == 0:
 			var scene = load("res://scenes/battle_UI.tscn")
 			var instance = scene.instance()

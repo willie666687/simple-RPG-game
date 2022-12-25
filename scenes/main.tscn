@@ -240,7 +240,6 @@ position = Vector2( 0, -160 )
 z_index = -1
 
 [node name="trees" type="Node2D" parent="scene"]
-scale = Vector2( 1, 1 )
 
 [node name="Tree" parent="scene/trees" instance=ExtResource( 23 )]
 position = Vector2( 3760, 2560 )
@@ -290,31 +289,24 @@ position = Vector2( 15360, -2960 )
 
 [node name="Stone" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( 5440, 1280 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone2" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( -2560, 2560 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone3" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( 6240, 6400 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone4" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( -2720, -2400 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone5" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( 9040, 1120 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone6" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( 8880, -2710 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Stone7" parent="scene/stones" instance=ExtResource( 19 )]
 position = Vector2( 10960, 4160 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="enemies" type="Node2D" parent="."]
 script = ExtResource( 22 )
