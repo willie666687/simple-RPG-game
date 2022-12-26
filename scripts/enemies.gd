@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var slime = preload("res://scenes/slime.tscn")
 
 func _ready():
