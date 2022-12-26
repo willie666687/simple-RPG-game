@@ -47,7 +47,6 @@ font_data = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" groups=["fight"]]
 script = ExtResource( 1 )
-playerLevel = 4
 
 [node name="ItemList" type="ItemList" parent="."]
 margin_left = 24.0
