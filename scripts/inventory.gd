@@ -70,6 +70,9 @@ func _process(_delta):
 		else:
 			if_show(false)
 			opened = false
+	elif player.fighting == true && opened == true:
+		if_show(false)
+		opened = false
 	ItemNo = get_node("ItemList").get_selected_items()
 	SelectedItemtext = $"ItemList".items[ItemNo[0]*3]
 	if SelectedItemtext in itemDes:

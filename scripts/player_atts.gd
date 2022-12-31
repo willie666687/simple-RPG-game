@@ -3,7 +3,7 @@ export var playerHealth = 100.0
 export var playerMaxHealth = 100.0
 export var playerAttack = 10.0
 export var died = false
-export var playerLevel = 0
+export var playerLevel = 1
 export var playerXp = 0.0
 export var attackDmg = 0
 export var levelXp = 0
@@ -42,11 +42,11 @@ func countAtts():
 		swordDmg = $"/root/Ui".itemAttDmg[equipped]
 	else:
 		swordDmg = 0
-	playerAttack = 10.0 + float(playerLevel*1)
+	playerAttack = 9.0 + float(playerLevel*1)
 	attackDmg = playerAttack + swordDmg
 	if 100.0 + float(playerLevel*5) >= playerMaxHealth:
-		playerHealth += (100.0 + float(playerLevel*5)) - playerMaxHealth
-	playerMaxHealth = 100.0 + float(playerLevel*5)
+		playerHealth += (95.0 + float(playerLevel*5)) - playerMaxHealth
+	playerMaxHealth = 95.0 + float(playerLevel*5)
 
 func attack():
 	enemyHealth -= attackDmg

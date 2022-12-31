@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slime_bullet.png-ec8ada48a54929ceaf3425c7e5134daa.stex"
+path="res://.import/wolf_tooth_attack.png-bb2a1ff006e5a575815fe70304c41848.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/slime_bullet.png"
-dest_files=[ "res://.import/slime_bullet.png-ec8ada48a54929ceaf3425c7e5134daa.stex" ]
+source_file="res://assests/mobs/wolf_tooth_attack.png"
+dest_files=[ "res://.import/wolf_tooth_attack.png-bb2a1ff006e5a575815fe70304c41848.stex" ]
 
 [params]
 
