@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assests/floor/dirt_grass_left.png" type="Texture" id=1]
 [ext_resource path="res://assests/floor/dirt_grass_right_down.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://assests/floor/dirt_grass_right_up.png" type="Texture" id=12]
 [ext_resource path="res://assests/floor/dirt_grass_dot_left_down.png" type="Texture" id=13]
 [ext_resource path="res://scenes/Appletree.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/wolf.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assests/floor/dirt.png" type="Texture" id=18]
 [ext_resource path="res://scenes/Stone.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=20]
@@ -315,5 +314,5 @@ script = ExtResource( 22 )
 [node name="slimes" type="Node2D" parent="enemies"]
 position = Vector2( -2960, 720 )
 
-[node name="wolf" parent="enemies" instance=ExtResource( 15 )]
-position = Vector2( 120, 3350 )
+[node name="wolfs" type="Node2D" parent="enemies"]
+position = Vector2( -2960, 720 )

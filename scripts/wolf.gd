@@ -1,7 +1,7 @@
 extends Area2D
 
 var player
-var health = 500.0
+var health = 300.0
 var fightArea
 var tooth
 var regeneration = 2.5

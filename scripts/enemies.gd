@@ -2,15 +2,17 @@ extends Node2D
 
 var slime = preload("res://scenes/slime.tscn")
 onready var avoid_objects = [$"/root/Node2D/player",$"/root/Node2D/scene/campfire"]
+var wolf = preload("res://scenes/wolf.tscn")
 
 func _ready():
 	pass
 func _process(delta):
-	spawn($slimes,slime)
+	spawn($slimes,slime,15)
+	spawn($wolfs,wolf,5)
 	pass
 
-func spawn(monster,monsterScene):
-	if monster.get_child_count() < 150:
+func spawn(monster,monsterScene,amount):
+	if monster.get_child_count() < amount:
 		avoid_objects += $"/root/Node2D/scene/trees".get_children() + $"/root/Node2D/enemies/slimes".get_children() + $"/root/Node2D/scene/stones".get_children()
 		var instance = monsterScene.instance()
 		var threshold = 1250
