@@ -317,4 +317,3 @@ position = Vector2( -2960, 720 )
 
 [node name="wolf" parent="enemies" instance=ExtResource( 15 )]
 position = Vector2( 120, 3350 )
-scale = Vector2( 1, 1 )
